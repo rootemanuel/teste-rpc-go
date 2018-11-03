@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package teste;
+option go_package="testepb";
+
+message Teste {
+    string nome = 1;
+    string sobrenome = 2;
+}
+
+message TesteRequest {
+    Teste teste = 1;
+}
+
+message TesteResponse {
+    string resultado = 1;
+}
+
+service TesteService {
+    rpc Teste(TesteRequest) returns (TesteResponse){};
+}
